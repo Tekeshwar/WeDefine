@@ -1,3 +1,7 @@
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +25,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+// Register MediatR
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 app.Run();

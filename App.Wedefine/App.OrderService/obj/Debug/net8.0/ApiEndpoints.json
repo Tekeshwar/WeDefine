@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "App.OrderService.API.OrderController",
+    "ContainingType": "App.OrderService.API.Controllers.OrderController",
     "Method": "CreateOrder",
-    "RelativePath": "api/Order",
+    "RelativePath": "Order/CreateOrder",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -13,6 +13,61 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "App.OrderService.API.DTOs.ErrorResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "CreateOrder"
+  },
+  {
+    "ContainingType": "App.OrderService.API.Controllers.OrderController",
+    "Method": "GetOrder",
+    "RelativePath": "Order/GetOrder/GetOrder/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "App.OrderService.API.DTOs.GetOrdersDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "App.OrderService.API.DTOs.ErrorResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
   }
 ]

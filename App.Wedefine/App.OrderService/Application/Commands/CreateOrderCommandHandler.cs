@@ -14,13 +14,11 @@ namespace App.OrderService.Application.Commands
 
         public async Task<int> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
         {
-
             Order order = new Order
             {
                 ProductName = request.ProductName,
                 Price = request.Price
             };
-
             await  _orderRepository.AddAsync(order);
             return order.Id;
         }
