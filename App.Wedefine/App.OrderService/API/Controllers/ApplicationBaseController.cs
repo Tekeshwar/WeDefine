@@ -7,5 +7,6 @@ namespace App.OrderService.API.Controllers
     [ApiController]
     public class ApplicationBaseController : ControllerBase
     {
+
     }
 }
