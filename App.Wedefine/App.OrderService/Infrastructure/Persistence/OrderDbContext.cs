@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace App.OrderService.Infrastructure.Persistence
 {
-    public class OrdeDbContext :DbContext
+    public class OrderDbContext :DbContext
     {
         public DbSet<Order> Orders { get; set; }
 
-        public OrdeDbContext(DbContextOptions<OrdeDbContext> options) : base(options) { }
+        public OrderDbContext(DbContextOptions<OrderDbContext> options) : base(options) { }
     }
 }
