@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.OrderService.API.Controllers
+namespace App.ProductService.API.Controllers
 {
     [Route("[controller]/[action]")]
     [ApiController]
@@ -15,4 +15,3 @@ namespace App.OrderService.API.Controllers
         }
     }
 }
- 

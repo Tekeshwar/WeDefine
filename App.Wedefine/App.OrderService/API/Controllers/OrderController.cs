@@ -1,4 +1,5 @@
-﻿using App.OrderService.API.ActionFilter;
+﻿using App.CommanLib.ActionFilters;
+using App.CommanLib.DTOs;
 using App.OrderService.API.DTOs;
 using App.OrderService.Application.Commands;
 using MediatR;
@@ -11,11 +12,8 @@ namespace App.OrderService.API.Controllers
     [SwaggerTag("Orders")]
     public class OrderController : ApplicationBaseController
     {
-        private readonly IMediator _mediatR;
-        public OrderController(IMediator mediator)
-        {
-            _mediatR = mediator;
-        }
+        
+        public OrderController(IMediator mediator):base(mediator) { }        
 
         /// <summary>
         /// Create new order
@@ -38,7 +36,7 @@ namespace App.OrderService.API.Controllers
         /// <returns></returns>
         [HttpGet("GetOrder/{orderId}")]
         [ProducesResponseType(typeof(GetOrdersDto), 200)]
-        [ProducesResponseType(typeof(ErrorResponseDto), 400)]       
+        [ProducesResponseType(typeof(ErrorResponseDto), 400)]         
         [ValidateRange("orderId", 1, 100)]
         public async Task<IActionResult> GetOrder([FromRoute,] int orderId)
         {

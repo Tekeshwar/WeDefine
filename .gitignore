@@ -3,3 +3,13 @@
 ################################################################################
 
 /App.Wedefine/.vs
+/App.Wedefine/App.CommanLib/bin/Debug/net8.0
+/App.Wedefine/App.OcelotApiGateway/bin/Debug/net8.0/App.OcelotApiGateway.dll
+/App.Wedefine/App.OcelotApiGateway/bin/Debug/net8.0/App.OcelotApiGateway.exe
+/App.Wedefine/App.OcelotApiGateway/bin/Debug/net8.0/App.OcelotApiGateway.pdb
+/App.Wedefine/App.CommanLib/obj/App.CommanLib.csproj.nuget.dgspec.json
+/App.Wedefine/App.CommanLib/obj/App.CommanLib.csproj.nuget.g.props
+/App.Wedefine/App.CommanLib/obj/App.CommanLib.csproj.nuget.g.targets
+/App.Wedefine/App.CommanLib/obj/Debug/net8.0
+/App.Wedefine/App.CommanLib/obj/project.assets.json
+/App.Wedefine/App.CommanLib/obj/project.nuget.cache
