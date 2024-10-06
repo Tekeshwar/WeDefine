@@ -11,7 +11,7 @@ using System.Web.Services.Description;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<OrderDbContext>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("OrderDbConnection")));
 
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();

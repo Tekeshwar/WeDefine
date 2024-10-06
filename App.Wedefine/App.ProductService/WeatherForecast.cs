@@ -1,4 +1,4 @@
-namespace App.OcelotApiGateway
+namespace App.ProductService
 {
     public class WeatherForecast
     {

@@ -1,21 +1,56 @@
 ﻿using App.OrderService.Application.Interfaces;
 using App.OrderService.Domain.Entities;
 using App.OrderService.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace App.OrderService.Infrastructure.Repositories
 {
     public class OrderRepository : IOrderRepository
-    {
-        private readonly OrderDbContext _orderDbContext;
-        public OrderRepository(OrderDbContext orderDbContext)
+    {        
+        private readonly AppDbContext _context;
+
+        public OrderRepository(AppDbContext context)
         {
-            _orderDbContext = orderDbContext;
+            _context = context;
         }
 
-        public async Task AddAsync(Order order)
+        public Task AddAsync(Order order)
         {
-            _orderDbContext.Orders.Add(order);
-            await _orderDbContext.SaveChangesAsync();
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(Guid orderId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Order>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Order> GetByIdAsync(Guid orderId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<decimal> GetProductPrice(Guid productId)
+        {
+            // Find the product by ID and return its price
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == productId);
+            return product != null ? product.Price : 0;
+        }
+
+        public async Task<Order> GetOrderByIdAsync(Guid orderId)
+        {
+            return await _context.Orders
+                .Include(o => o.OrderItems)
+                .FirstOrDefaultAsync(o => o.Id == orderId);
+        }
+        public Task UpdateAsync(Order order)
+        {
+            throw new NotImplementedException();
         }
     }
 }

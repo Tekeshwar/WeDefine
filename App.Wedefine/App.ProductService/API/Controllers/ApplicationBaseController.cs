@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace App.OrderService.API.Controllers
+namespace App.ProductService.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class ApplicationBaseController : ControllerBase
     {
@@ -15,4 +15,3 @@ namespace App.OrderService.API.Controllers
         }
     }
 }
- 
